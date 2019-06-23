@@ -26,11 +26,11 @@ var Greeting = createReactClass({
 });
 ```
 
-The API of ES6 classes is similar to `createReactClass()` with a few exceptions.
+ה-API של מחלקות ES6 דומה ל-`createReactClass()`, למעט מספר פרטים.
 
-## Declaring Default Props {#declaring-default-props}
+## הכרזה על Props ברירת מחדל {#declaring-default-props}
 
-With functions and ES6 classes `defaultProps` is defined as a property on the component itself:
+עם פונקציות ומחלקות ES6, `defaultProps` מוגדרת כתכונה של הקומפוננטה עצמה:
 
 ```javascript
 class Greeting extends React.Component {
@@ -42,7 +42,7 @@ Greeting.defaultProps = {
 };
 ```
 
-With `createReactClass()`, you need to define `getDefaultProps()` as a function on the passed object:
+ב-`createReactClass()`, צריך להגדיר את `getDefaultProps()` כפונקציה של האובייקט שמועבר:
 
 ```javascript
 var Greeting = createReactClass({
@@ -57,9 +57,9 @@ var Greeting = createReactClass({
 });
 ```
 
-## Setting the Initial State {#setting-the-initial-state}
+## הגדרת ה-State ההתחלתי {#setting-the-initial-state}
 
-In ES6 classes, you can define the initial state by assigning `this.state` in the constructor:
+במחלקות ES^6, ניתן להגדיר את ה-state ההתחלתי באמצעות השמה של `this.state` ב-constructor:
 
 ```javascript
 class Counter extends React.Component {
@@ -71,7 +71,7 @@ class Counter extends React.Component {
 }
 ```
 
-With `createReactClass()`, you have to provide a separate `getInitialState` method that returns the initial state:
+ב-`createReactClass()`, צריך להביא מתודת `getInitialState` נפרדת שמחזירה את ה-state ההתחלתי:
 
 ```javascript
 var Counter = createReactClass({
