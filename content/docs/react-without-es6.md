@@ -1,10 +1,10 @@
 ---
 id: react-without-es6
-title: React Without ES6
+title: ריאקט בלי Es6
 permalink: docs/react-without-es6.html
 ---
 
-Normally you would define a React component as a plain JavaScript class:
+לרוב, נגדיר קומפוננטה של ריאקט באמצעות מחלקה של JavaScript:
 
 ```javascript
 class Greeting extends React.Component {
@@ -14,7 +14,7 @@ class Greeting extends React.Component {
 }
 ```
 
-If you don't use ES6 yet, you may use the `create-react-class` module instead:
+אם אתה עוד לא משתמש עדיין ב-ES6, תוכל להשתמש במקום זאת ב-module `create-react-class`:
 
 
 ```javascript
