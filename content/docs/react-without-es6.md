@@ -14,8 +14,7 @@ class Greeting extends React.Component {
 }
 ```
 
-אם אתה עוד לא משתמש עדיין ב-ES6, תוכל להשתמש במקום זאת ב-module `create-react-class`:
-
+אם את\ה עוד לא משתמש\ת עדיין ב-ES6, תוכל\י להשתמש במקום זאת ב-module `create-react-class`:
 
 ```javascript
 var createReactClass = require('create-react-class');
@@ -59,7 +58,7 @@ var Greeting = createReactClass({
 
 ## הגדרת ה-State ההתחלתי {#setting-the-initial-state}
 
-במחלקות ES^6, ניתן להגדיר את ה-state ההתחלתי באמצעות השמה של `this.state` ב-constructor:
+במחלקות ES6, ניתן להגדיר את ה-state ההתחלתי באמצעות השמה של `this.state` ב-constructor:
 
 ```javascript
 class Counter extends React.Component {
