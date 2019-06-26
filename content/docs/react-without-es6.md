@@ -81,16 +81,16 @@ var Counter = createReactClass({
 });
 ```
 
-## Autobinding {#autobinding}
+## Binding אוטומטי {#autobinding}
 
-In React components declared as ES6 classes, methods follow the same semantics as regular ES6 classes. This means that they don't automatically bind `this` to the instance. You'll have to explicitly use `.bind(this)` in the constructor:
+בקומפוננטות ריאקט שממומשות באמצעות מחלקות ES6, המתודות מתנהגות בצורה דומה (סמנטית) למחלקות ES6 רגילות. לפיכך, המתודות לא עושות bind אוטומטית למופע של המחלקה. תצטרך\תצטרכי להשתמש ב-`.bind(this)` בצורה מפורשת ב-constructor:
 
 ```javascript
 class SayHello extends React.Component {
   constructor(props) {
     super(props);
     this.state = {message: 'Hello!'};
-    // This line is important!
+    // השורה הזו חשובה!
     this.handleClick = this.handleClick.bind(this);
   }
 
@@ -99,7 +99,7 @@ class SayHello extends React.Component {
   }
 
   render() {
-    // Because `this.handleClick` is bound, we can use it as an event handler.
+	// מכיוון ש-`this.handleClick` הוא bound, אפשר להשתמש בו כ-event handler
     return (
       <button onClick={this.handleClick}>
         Say hello
@@ -109,7 +109,7 @@ class SayHello extends React.Component {
 }
 ```
 
-With `createReactClass()`, this is not necessary because it binds all methods:
+עם שימוש ב-`createReactClass()`, זה לא נחוץ משום שנעשה bind לכל המתודות:
 
 ```javascript
 var SayHello = createReactClass({
@@ -131,10 +131,9 @@ var SayHello = createReactClass({
 });
 ```
 
-This means writing ES6 classes comes with a little more boilerplate code for event handlers, but the upside is slightly better performance in large applications.
+זה אומר שכתיבת מחלקות ES6 דורשת עבודה נוספת עבור event handler-ים, עם זאת יש יתרון בשיפור הביצועים בפיתוח אפליקציות גדולות.
 
-If the boilerplate code is too unattractive to you, you may enable the **experimental** [Class Properties](https://babeljs.io/docs/plugins/transform-class-properties/) syntax proposal with Babel:
-
+אם כתיבת הקוד הנוסף (עם ה-binding) לא אטרקטיבית בעינייך, את\ה רשאי\ת לאפשר את הכתיב **הניסיוני** [Class Properties](https://babeljs.io/docs/plugins/transform-class-properties/) מ-proposal של Babel:
 
 ```javascript
 class SayHello extends React.Component {
@@ -158,13 +157,13 @@ class SayHello extends React.Component {
 }
 ```
 
-Please note that the syntax above is **experimental** and the syntax may change, or the proposal might not make it into the language.
-
+שים\שימי לב שהכתיב הזה הוא **ניסיוני** ועשוי להשתנות בעתיד, או שה-proposal לא יתקבל.
 If you'd rather play it safe, you have a few options:
+אם את\ה מעדיף\מעדיפה ללכת על בטוח, ישנן מספר אפשרויות:
 
-* Bind methods in the constructor.
-* Use arrow functions, e.g. `onClick={(e) => this.handleClick(e)}`.
-* Keep using `createReactClass`.
+* עשה\עשי bind למתודות בתוך ה-constructor.
+* השתמש\י ב-arrow functions, לדוגמא `onClick={(e) => this.handleClick(e)}`.
+* המשך\המשיכי להשתמש ב-`createReactClass`.
 
 ## Mixins {#mixins}
 
